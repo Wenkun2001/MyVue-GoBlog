@@ -1,0 +1,15 @@
+## myblog_server—— Golang后端
+#### api—— 接口目录
+#### config—— 存放记录配置结构体目录
+#### core—— 初始化操作
+#### docs—— swagger生成的api文档目录
+#### flag—— 命令行相关的初始化
+#### global—— 全局变量的包
+#### middleware—— 中间件
+#### models—— 表结构
+#### routers—— gin路由目录
+#### service—— 项目与服务相关的目录
+#### testdata—— 测试文件的目录
+#### utils/valid—— 常用的一些工具
+#### main.go—— 程序的入口
+#### settings.yaml—— 配置文件
