@@ -5,6 +5,9 @@ mysql:
   user: root
   password: 010226
   log_level: dev
+  max_idle_conn: 10
+  max_open_conn: 100
+  Conn_max_lifetime: 5
 logger:
   level: info
   prefix: '[myblog]'
@@ -14,4 +17,4 @@ logger:
 system:
   host: "0.0.0.0"
   port: 8099
-  env: dev
+  env: release
