@@ -2,6 +2,7 @@ package main
 
 import (
 	"myblog_server/core"
+	"myblog_server/flag"
 	"myblog_server/global"
 	"myblog_server/routers"
 )
@@ -14,9 +15,18 @@ func main() {
 	// 连接数据库
 	global.DB = core.InitGorm()
 
+	option := flag.Parse()
+	if flag.IsWebStop(option) {
+		flag.SwitchOption(option)
+		return
+	}
+
 	router := routers.InitRouter()
 
 	addr := global.Config.System.Addr()
 	global.Log.Infof("myblog_server运行在：%s", addr)
-	router.Run(addr)
+	err := router.Run(addr)
+	if err != nil {
+		global.Log.Fatalf(err.Error())
+	}
 }
