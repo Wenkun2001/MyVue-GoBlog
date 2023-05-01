@@ -1,13 +1,13 @@
 mysql:
   host: 127.0.0.1
   port: 3306
+  config: ""
   db: myblog_db
   user: root
-  password: 010226
-  log_level: dev
+  password: "010226"
   max_idle_conn: 10
   max_open_conn: 100
-  Conn_max_lifetime: 5
+  Conn_max_lifetime: 5ns
 logger:
   level: info
   prefix: '[myblog]'
@@ -15,6 +15,23 @@ logger:
   show_line: true
   log_in_console: true
 system:
-  host: "0.0.0.0"
+  host: 0.0.0.0
   port: 8099
   env: release
+site_info:
+  create_at: "2023-05-01"
+  bei_an: 闽A
+  title: 雷文堃的个人博客
+  qq_image: qq
+  version: 0.0.2
+  email: 2470174271@qq.com
+  wechat_image: wechat
+  name: LWK
+  job: 后端开发
+  addr: 福建福州
+  slogan: 文堃微博
+  slogan_en: WENKUNBLOG
+  web: web
+  bilibili_url: B站
+  gitee_url: https://github.com/WinterPine/
+  github_url: https://github.com/Wenkun2001/
