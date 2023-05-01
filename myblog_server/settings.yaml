@@ -35,3 +35,26 @@ site_info:
   bilibili_url: B站
   gitee_url: https://github.com/WinterPine/
   github_url: https://github.com/Wenkun2001/
+jwt:
+  secret: xxx
+  expires: 48
+  issuer: xx
+qq:
+  app-id: "xx"
+  key: xx
+  redirect: http://xx.xx.com/login?flag=qq
+email:
+  host: smtp.qq.com
+  port: 465
+  user: xxx@qq.com
+  password: xxx
+  default_from_email: 雷文堃
+  use_ssl: true
+  use_tls: true
+qi_niu:
+  access_key: 666-888
+  secret_key: xxx
+  bucket: lwk
+  cdn: xxx://xxx.xxx.com
+  zone: xx
+  size: 5
