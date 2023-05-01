@@ -6,8 +6,24 @@ import (
 	"io/fs"
 	"myblog_server/global"
 	"myblog_server/models/res"
+	"myblog_server/utils"
 	"os"
 	"path"
+	"strings"
+)
+
+var (
+	// WhiteImageList 图片上传的白名单
+	WhiteImageList = []string{
+		"jpg",
+		"png",
+		"jpeg",
+		"ico",
+		"tiff",
+		"gif",
+		"svg",
+		"webp",
+	}
 )
 
 type FileUploadResponse struct {
@@ -46,6 +62,19 @@ func (ImagesApi) ImageUploadView(c *gin.Context) {
 
 	// 遍历图像列表
 	for _, file := range fileList {
+		fileName := file.Filename
+		nameList := strings.Split(fileName, ".")
+		suffix := strings.ToLower(nameList[len(nameList)-1])
+
+		if !utils.InList(suffix, WhiteImageList) {
+			resultList = append(resultList, FileUploadResponse{
+				FileName:  file.Filename,
+				IsSuccess: false,
+				Msg:       fmt.Sprintf("非法文件"),
+			})
+			continue
+		}
+
 		// 获取单个图像文件的完整路径
 		filePath := path.Join(basePath, file.Filename)
 		// 判断图片大小
