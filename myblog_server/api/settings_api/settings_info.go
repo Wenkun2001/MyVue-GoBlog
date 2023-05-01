@@ -11,6 +11,7 @@ type SettingsUri struct {
 }
 
 // SettingsInfoView 显示某一项的配置信息
+// 将多个配置api合并为一个配置接口，好处是只有一个api接口，坏处是接口的入参和出灿不统一
 func (SettingsApi) SettingsInfoView(c *gin.Context) {
 	//res.Ok(map[string]string{}, "xxx", c)
 	//c.JSON(200, gin.H{"msg": "xxx"})
