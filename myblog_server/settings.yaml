@@ -52,9 +52,13 @@ email:
   use_ssl: true
   use_tls: true
 qi_niu:
+  enable: false
   access_key: 666-888
   secret_key: xxx
   bucket: lwk
   cdn: xxx://xxx.xxx.com
   zone: xx
   size: 5
+upload:
+  size: 2
+  path: myblog_server/uploads/file
