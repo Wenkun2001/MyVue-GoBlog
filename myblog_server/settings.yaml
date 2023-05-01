@@ -40,7 +40,7 @@ jwt:
   expires: 48
   issuer: xx
 qq:
-  app-id: "xx"
+  app_id: "xx"
   key: xx
   redirect: http://xx.xx.com/login?flag=qq
 email:
